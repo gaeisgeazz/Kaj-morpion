@@ -1,0 +1,239 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    max-width: 80px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 2rem;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 60px;
+        margin-right: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+.gallery {
+    padding: 2em;
+    text-align: center;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-grid img {
+    margin: 0.5em;
+    width: 200px;
+    /* Ajustez la largeur selon vos besoins */
+    height: 200px;
+    /* Ajustez la hauteur selon vos besoins */
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header .logo {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .photo-grid {
+        flex-direction: column;
+    }
+
+    .photo-grid img {
+        margin: 1em 0;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 90%;
+    }
+
+    .gallery {
+        padding: 1em;
+    }
+
+    .photo-grid {
+        flex-direction: column;
+    }
+
+    .photo-grid img {
+        width: 100%;
+        height: auto;
+        margin: 0.5em 0;
+    }
+}
+
+.slideshow-container {
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.slideshow-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mySlides {
+    display: none;
+    background-size: contain;
+
+}
+
+.mySlide {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-size: contain;
+
+}
+
+.mySlides,
+img {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+.mySlide img {
+    width: 300px;
+    height: 400px;
+    display: block;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .contact-buttons a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .contact-buttons a i {
+    margin-right: 10px;
+  }
+
+  .whatsapp-button {
+    background-color: #25D366;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #1DA851;
+  }
+
+  .telegram-button {
+    background-color: #0088CC;
+  }
+
+  .telegram-button:hover {
+    background-color: #006BA1;
+  }
+  .text{
+    text-align: left;
+    padding: 20px;
+  }
+  p{
+    color: #333
+  }
