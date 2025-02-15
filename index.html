@@ -2,12 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>game of snake</title>
+    <title>Game of Snake</title>
     <link rel="shortcut icon" href="snake25.png" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="script.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2c3e50;
+            font-family: 'Arial', sans-serif;
+            color: #ecf0f1;
+        }
+        canvas {
+            border: 10px solid #ecf0f1;
+            background-color: #34495e;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .controls {
+            display: grid;
+            grid-template-areas:
+                ". up ."
+                "left . right"
+                ". down .";
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .arrow {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            background-color: #1abc9c;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .arrow:hover {
+            background-color: #16a085;
+        }
+        #left {
+            grid-area: left;
+        }
+        #up {
+            grid-area: up;
+        }
+        #down {
+            grid-area: down;
+        }
+        #right {
+            grid-area: right;
+        }
+        #start {
+            margin-top: 20px;
+            width: 120px;
+            height: 50px;
+            font-size: 20px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #start:hover {
+            background-color: #c0392b;
+        }
+        @media (max-width: 600px) {
+            .controls {
+                grid-template-areas:
+                    "left up right"
+                    ". down .";
+            }
+            .arrow {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Kajgeazy</h1>
+    <canvas id="gameCanvas" width="900" height="600"></canvas>
+    <button id="start">Start</button>
+    <div class="controls">
+        <button id="left" class="arrow">⬅️</button>
+        <button id="up" class="arrow">⬆️</button>
+        <button id="down" class="arrow">⬇️</button>
+        <button id="right" class="arrow">➡️</button>
+    </div>
 </body>
 </html>
