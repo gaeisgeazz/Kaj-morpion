@@ -2,76 +2,103 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: sans-serif;
       text-align: center;
       background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
     }
+
     h1 {
-      margin-top: 20px;
+      margin: 20px 0 10px;
+      font-size: 6vw;
     }
+
     #grille {
       display: grid;
-      grid-template-columns: repeat(3, 100px);
-      grid-template-rows: repeat(3, 100px);
-      gap: 5px;
-      justify-content: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3vw;
+      width: 90vw;
+      max-width: 400px;
       margin: 30px auto;
     }
+
     .case {
       background-color: white;
-      font-size: 2.5rem;
+      font-size: 10vw;
       display: flex;
+      aspect-ratio: 1;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       border: 2px solid #ccc;
+      transition: background-color 0.2s;
     }
+
     .case:hover {
       background-color: #e0e0e0;
     }
+
     #message {
-      font-size: 1.2rem;
+      font-size: 4vw;
       margin-top: 20px;
     }
+
     button {
       margin-top: 20px;
       padding: 10px 20px;
-      font-size: 1rem;
+      font-size: 4vw;
+      max-width: 200px;
+      width: 60vw;
     }
-    a{
-        padding:5px;
-        border-radius:20px;
-        text-decoration:none;
-        color:green;
-        background-color:white;
-        width:100px;
-        border:solid green 1px
+
+    a {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: green;
+      background-color: white;
+      border: 1px solid green;
+      margin-top: 10px;
+      font-size: 4vw;
     }
-    a:hover{
-         width:130px;
-        padding:6px;
-        color:white;
-        background-color:green;
+
+    a:hover {
+      color: white;
+      background-color: green;
+      transform: scale(1.05);
+      transition: all 0.2s;
+    }
+
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 3vw;
+      }
+
+      #message, button, a {
+        font-size: 1.5vw;
+      }
+
+      .case {
+        font-size: 3vw;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Tic Tac Toe </h1>
-  
- 
-   <p>
-   <b>
-    <a href="https://wa.me/237654259762" target="_blank">
-   @kajgeazy 
-   </a>
-   </b>
-   </p> 
+  <h1>Tic Tac Toe</h1>
 
- 
+  <p><b><a href="https://wa.me/237654259762" target="_blank">@kajgeazy</a></b></p>
+
   <div id="grille"></div>
   <div id="message">Joueur X commence</div>
   <button onclick="recommencer()">Recommencer</button>
