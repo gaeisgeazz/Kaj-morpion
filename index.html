@@ -1,100 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Game of Snake</title>
-    <link rel="shortcut icon" href="snake25.png" type="image/x-icon">
-    <script src="script.js"></script>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #2c3e50;
-            font-family: 'Arial', sans-serif;
-            color: #ecf0f1;
-        }
-        canvas {
-            border: 10px solid #ecf0f1;
-            background-color: #34495e;
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .controls {
-            display: grid;
-            grid-template-areas:
-                ". up ."
-                "left . right"
-                ". down .";
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .arrow {
-            width: 80px;
-            height: 80px;
-            font-size: 24px;
-            background-color: #1abc9c;
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .arrow:hover {
-            background-color: #16a085;
-        }
-        #left {
-            grid-area: left;
-        }
-        #up {
-            grid-area: up;
-        }
-        #down {
-            grid-area: down;
-        }
-        #right {
-            grid-area: right;
-        }
-        #start {
-            margin-top: 20px;
-            width: 120px;
-            height: 50px;
-            font-size: 20px;
-            background-color: #e74c3c;
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #start:hover {
-            background-color: #c0392b;
-        }
-        @media (max-width: 600px) {
-            .controls {
-                grid-template-areas:
-                    "left up right"
-                    ". down .";
-            }
-            .arrow {
-                width: 70px;
-                height: 70px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    #grille {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 5px;
+      justify-content: center;
+      margin: 30px auto;
+    }
+    .case {
+      background-color: white;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid #ccc;
+    }
+    .case:hover {
+      background-color: #e0e0e0;
+    }
+    #message {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+    a{
+        padding:5px;
+        border-radius:20px;
+        text-decoration:none;
+        color:green;
+        background-color:white;
+        width:100px;
+        border:solid green 1px
+    }
+    a:hover{
+         width:130px;
+        padding:6px;
+        color:white;
+        background-color:green;
+    }
+  </style>
 </head>
 <body>
-    <button id="start">Start</button> <br>
-    <canvas id="gameCanvas" width="900" height="600"></canvas>
-    <div class="controls">
-        <button id="left" class="arrow">⬅️</button>
-        <button id="up" class="arrow">⬆️</button>
-        <button id="down" class="arrow">⬇️</button>
-        <button id="right" class="arrow">➡️</button>
-    </div>
+
+  <h1>Tic Tac Toe </h1>
+  
+ 
+   <p>
+   <b>
+    <a href="https://wa.me/237654259762" target="_blank">
+   @kajgeazy 
+   </a>
+   </b>
+   </p> 
+
+ 
+  <div id="grille"></div>
+  <div id="message">Joueur X commence</div>
+  <button onclick="recommencer()">Recommencer</button>
+
+  <script>
+    const grille = document.getElementById('grille');
+    const message = document.getElementById('message');
+    let joueur = 'X';
+    let plateau = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""]
+    ];
+    let jeuActif = true;
+
+    function creerGrille() {
+      grille.innerHTML = "";
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          const div = document.createElement('div');
+          div.classList.add('case');
+          div.dataset.ligne = i;
+          div.dataset.colonne = j;
+          div.addEventListener('click', jouerCase);
+          grille.appendChild(div);
+        }
+      }
+    }
+
+    function jouerCase(e) {
+      if (!jeuActif) return;
+
+      const i = e.target.dataset.ligne;
+      const j = e.target.dataset.colonne;
+
+      if (plateau[i][j] !== "") return;
+
+      plateau[i][j] = joueur;
+      e.target.textContent = joueur;
+
+      if (verifierGagnant(joueur)) {
+        message.textContent = `Le joueur ${joueur} a gagné !`;
+        jeuActif = false;
+        return;
+      }
+
+      if (estPleine()) {
+        message.textContent = "Match nul !";
+        jeuActif = false;
+        return;
+      }
+
+      joueur = joueur === "X" ? "O" : "X";
+      message.textContent = `Au tour du joueur ${joueur}`;
+    }
+
+    function verifierGagnant(j) {
+      for (let i = 0; i < 3; i++) {
+        if (plateau[i][0] === j && plateau[i][1] === j && plateau[i][2] === j) return true;
+        if (plateau[0][i] === j && plateau[1][i] === j && plateau[2][i] === j) return true;
+      }
+      if (plateau[0][0] === j && plateau[1][1] === j && plateau[2][2] === j) return true;
+      if (plateau[0][2] === j && plateau[1][1] === j && plateau[2][0] === j) return true;
+
+      return false;
+    }
+
+    function estPleine() {
+      return plateau.flat().every(cell => cell !== "");
+    }
+
+    function recommencer() {
+      joueur = 'X';
+      jeuActif = true;
+      plateau = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+      ];
+      message.textContent = "Joueur X commence";
+      creerGrille();
+    }
+
+    creerGrille();
+  </script>
 </body>
 </html>
