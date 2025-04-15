@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 10px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    flex-direction: column;
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul li {
+    margin-left: 20px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #ff5f5f;
+    border-bottom: 2px solid #ff5f5f;
+}
+
+/* Menu hamburger */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-hamburger .h {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Banner */
+.banner {
+   background: url('sky.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.vide{
+    height:200px
+}
+/* Article */
+.article {
+    width: 100%;
+    padding: 10px 20px;
+    background: #000000b2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;           /* Ajouté */
+    left: 0;             /* Pour coller au bord gauche */
+    border-radius: 0 0 10px 10px; /* Optionnel pour que ça suive la bordure */
+
+}
+
+/* Bouton personnalisé */
+#varcle {
+    color: white;
+    background: linear-gradient(to top, #9b0303, #ff5f5f);
+    text-align: center;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#varcle:hover {
+    background: linear-gradient(to top, #ff5f5f, #9b0303);
+}
+
+/* Contenu principal */
+.talkpic {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.text {
+    flex: 1;
+    padding: 15px;
+}
+
+.pik {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    width: 300px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.infos {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.bigcontent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.box {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* Petite image */
+#lilpic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.logim{
+    display:flex;
+}
+.log{
+    width:40px;
+    height:40px;
+}
+
+.logime{
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+
+}
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .nav-links ul {
+        flex-direction: column;
+        background: #1e1e1e;
+        width: 200px;
+        position: fixed;
+        top: 70px;
+        right: 10px;
+        padding: 1rem;
+        display: none;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.mobile-menu ul {
+        display: flex;
+    }
+
+    .menu-hamburger {
+        display: flex;
+    }
+
+    .talkpic,
+    .bigcontent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
+    /* Ajout d'animations globales */
+    body {
+        animation: fadeIn 1s ease-in-out;
+      }
+  
+      .pik,
+      .box,
+      .article,
+      .talk h1 {
+        animation: slideUp 1s ease forwards;
+        opacity: 0;
+      }
+  
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+  
+        to {
+          opacity: 1;
+        }
+      }
+  
+      @keyframes slideUp {
+        0% {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+  
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+  
+      button:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    
