@@ -13,14 +13,14 @@
     }
 
     header {
-      padding: 2rem;
+      padding: 1rem;
       text-align: center;
       background-color: #222;
     }
 
-    h1 {
+    h2 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
     }
 
     .gallery {
@@ -43,34 +43,59 @@
       background-color: #333;
       padding: 1rem;
     }
+    p{
+        color:aqua;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Ma Galerie Média</h1>
-  </header>
 
+  <header>
+    <h2>Ma Galerie Média</h2>
+  </header>
+<div>
+<p>
+<b>Nom:</b> Kidjock Agnangma jésida<br>
+<b>Filière:</b> Génie Informatique<br>
+<b>classe:</b> E302
+</p>
+</div>
+<p class="text">
+<h3>Voici la signification des sigles :</h3>
+
+HTML : HyperText Markup Language
+→ Langage de balisage utilisé pour structurer le contenu d’une page web.
+<br><br>
+CSS : Cascading Style Sheets
+→ Feuilles de style en cascade, utilisées pour styliser l'apparence du contenu HTML (couleurs, tailles, mise en page...).
+<br><br>
+JS : JavaScript
+→ Langage de programmation qui permet d’ajouter des interactions dynamiques à une page web (animations, formulaires interactifs, etc.).
+<br><br>
+PHP : PHP: Hypertext Preprocessor
+→ Langage de script côté serveur, utilisé pour générer des pages web dynamiques (par exemple : gérer des formulaires, se connecter à une base de données…).
+</p>
   <section class="gallery">
     <!-- Image -->
     <img src="cake.jpg" alt="Image exemple">
 
-    <!-- Vidéo -->
+   <!-- Vidéo 
     <iframe 
       src="cloud.mp4" 
       title="Vidéo"
       frameborder="0"
       allowfullscreen>
     </iframe>
-
+-->
     <!-- Vidéo locale -->
     <video controls>
       <source src="cloud.mp4" type="video/mp4">
       Votre navigateur ne prend pas en charge les vidéos HTML5.
     </video>
 
-    <!-- Image / photo -->
-    <img src="cake.jpg" alt="Photo exemple">
+    <!-- Image / photo 
+    <img src="cake.jpg" alt="Photo exemple">-->
 
     <!-- Fichier audio -->
     <audio controls>
