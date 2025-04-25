@@ -1,147 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="logogeazy.png" type="image/x-icon">
-  <title>GEAZY| Carnets de voyage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie Média</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
 
+    header {
+      padding: 1rem;
+      text-align: center;
+      background-color: #222;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .gallery img,
+    .gallery video,
+    .gallery iframe,
+    .gallery audio {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    audio {
+      background-color: #333;
+      padding: 1rem;
+    }
+    p{
+        color:aqua;
+    }
+  </style>
 </head>
-
 <body>
 
+
   <header>
-    <div class="logo">
-      <div class="logim">
-        <img src="logogeazy.png" class="log">
-        <h1><i>GEAZY</i></h1>
-      </div>
-      <h3>Carnets de voyage</h3>
-    </div>
-    <nav class="nav-links">
-      <div class="menu-hamburger">
-        <div class="h"></div>
-        <div class="h"></div>
-        <div class="h"></div>
-      </div>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">CV</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <h2>Ma Galerie Média</h2>
   </header>
+<div>
+<p>
+<b>Nom:</b> Kidjock Agnangma jésida<br>
+<b>Filière:</b> Génie Informatique<br>
+<b>classe:</b> E302
+</p>
+</div>
+<p class="text">
+<h3>Voici la signification des sigles :</h3>
 
-  <section class="banner">
-    <div class="vide"></div>
-    <div class="article">
-      <p>Retour aux États-Unis...</p>
-      <a href="#">
-        <button id="varcle">Voir l'article</button>
-      </a>
-    </div>
+HTML : HyperText Markup Language
+→ Langage de balisage utilisé pour structurer le contenu d’une page web.
+<br><br>
+CSS : Cascading Style Sheets
+→ Feuilles de style en cascade, utilisées pour styliser l'apparence du contenu HTML (couleurs, tailles, mise en page...).
+<br><br>
+JS : JavaScript
+→ Langage de programmation qui permet d’ajouter des interactions dynamiques à une page web (animations, formulaires interactifs, etc.).
+<br><br>
+PHP : PHP: Hypertext Preprocessor
+→ Langage de script côté serveur, utilisé pour générer des pages web dynamiques (par exemple : gérer des formulaires, se connecter à une base de données…).
+</p>
+  <section class="gallery">
+    <!-- Image -->
+    <img src="cake.jpg" alt="Image exemple">
+
+   <!-- Vidéo 
+    <iframe 
+      src="cloud.mp4" 
+      title="Vidéo"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+-->
+    <!-- Vidéo locale -->
+    <video controls>
+      <source src="cloud.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge les vidéos HTML5.
+    </video>
+
+    <!-- Image / photo 
+    <img src="cake.jpg" alt="Photo exemple">-->
+
+    <!-- Fichier audio -->
+    <audio controls>
+      <source src="adore.mp3" type="audio/mpeg">
+      Votre navigateur ne prend pas en charge l'audio HTML5.
+    </audio>
   </section>
-
-  <section class="talkpic">
-    <div class="talk">
-      <div class="logim">
-        <div class="logime"> <img src="safety.png" class="log">
-        </div>
-        <h1>JE SUIS UN GRAND VOYAGEUR</h1>
-      </div>
-      <p class=text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error modi repudiandae sit nulla? Dolore quasi, ullam
-        totam ipsam eveniet consequatur possimus obcaecati numquam tenetur enim distinctio vitae iste delectus qui?
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil quisquam laudantium voluptatum ab eos, sunt
-        aspernatur dolorum voluptate nisi quasi vero, repellendus quo, itaque perspiciatis labore ad quos iste qui.
-        Lorem, ipsum dolor sit amet consectetur <br><br> adipisicing elit. Dolor, doloribus minima. In quos architecto
-        magni
-        distinctio aliquam facere recusandae asperiores consequatur! Sequi autem reprehenderit architecto explicabo
-        voluptatem, pariatur necessitatibus numquam.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem minus molestias officiis exercitationem
-        ducimus odio, quaerat est, consequuntur architecto maxime quo, eos nihil officia mollitia? Iure magnam
-        exercitationem doloremque? <br><br>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam at repudiandae amet, iste fugiat eum ipsam
-        consequatur consequuntur eius saepe necessitatibus fugit pariatur quis velit architecto, sit eligendi maxime
-        ratione?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolorum culpa praesentium assumenda odio. Vitae
-        odit nihil aperiam molestias commodi quod minima pariatur, ratione illum eaque, qui, quia suscipit? Eum?
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, voluptates? Rerum, ducimus eveniet! Omnis ducimus
-        hic iste reiciendis repudiandae minima aliquam enim nam, velit doloribus quisquam, ratione atque, at accusamus.
-        <br><br>
-        adipisicing elit. Dolor, doloribus minima. In quos architecto magni
-        distinctio aliquam facere recusandae asperiores consequatur! Sequi autem reprehenderit architecto explicabo
-        voluptatem, pariatur necessitatibus numquam.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem minus molestias officiis exercitationem
-        ducimus odio, quaerat est, consequuntur architecto maxime quo, eos nihil officia mollitia? Iure magnam
-        exercitationem doloremque?
-      </p>
-    </div>
-    <div class="pic">
-      <div class="pik">
-        <h2>À propos de l'auteur</h2>
-        <img src="kaj.PNG" alt="Photo de l'auteur" class="image"><br><br>
-        <p class="infos">
-          Laisse-moi le temps de me présenter : je m'appelle Kajgeazy, je suis né le 25 mars 2006 à Yaoundé.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <hr><br>
-    <div class="bigcontent">
-
-      <div class="box">
-        <h2>MON DERNIER MESSAGE</h2><br>
-        <p>
-          I love you Gabriella 💖<br>
-          Mir geht es gut.<br>
-          Danke, Lehrerin.
-          End of world.
-          Star of game. <br>
-          Brazzo esquierdo la muerte
-        </p>
-      </div>
-
-      <div class="box">
-        <h2>MES PHOTOS</h2><br>
-        <div class="allmg">
-          <img src="pc.jpeg" alt="photo1" id="lilpic">
-          <img src="pc.jpeg" alt="photo2" id="lilpic">
-          <img src="pc.jpeg" alt="photo3" id="lilpic">
-          <img src="pc.jpeg" alt="photo3" id="lilpic">
-        </div>
-      </div>
-
-      <div class="box">
-        <h2>MES AMIS</h2><br>
-        <ol class="friend">
-          <li>Joyce</li>
-          <li>Emilie</li>
-          <li>Gabi</li>
-          <li>Serena</li>
-          <li>Nicky</li>
-          <li>Soleil</li>
-          <li>Ingrid</li>
-        </ol>
-      </div>
-
-    </div>
-  </footer>
-
-  <script>
-    const menuHamburger = document.querySelector(".menu-hamburger");
-    const navLinks = document.querySelector(".nav-links");
-
-    menuHamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-menu');
-    });
-  </script>
 
 </body>
-
 </html>
